@@ -1,1 +1,50 @@
-<p>This is the detail view.</p>
+
+<div id="spinner"></div>
+<div du-scroll-container="du-scroll-container" class="frame">
+  <div id="top" class="list-wrapper">
+    <div class="rbma-radio-picks">
+      <h1 class="title">{{list.fields.parentTitle}}</h1>
+    </div>
+    <h1 class="author">{{list.fields.author}}</h1>
+    <ul class="list-thumbs">
+      <li ng-repeat="entry in list.fields.individualListItems">
+        <div class="thumb-container"><a href="#{{entry.fields.anchorLinkTag}}" du-smooth-scroll="du-smooth-scroll">
+            <div class="img-container"><span class="order">{{entry.fields.order}}</span><img ng-src="{{entry.fields.image.fields.file.url}}"/></div></a></div>
+      </li>
+    </ul><img ng-src="{{list.fields.authorImage.fields.file.url}}" class="author-hero-image"/>
+    <div class="mobile-share">
+      <div class="button-group">
+        <div class="button"><a href="https://twitter.com/share?url={{list.fields.parentRbmaUrl}}&amp;via=rbma&amp;text={{list.fields.title}}" target="blank"><i class="fa fa-twitter"></i></a></div>
+        <div class="button"><a href="https://www.facebook.com/sharer/sharer.php?u={{list.fields.parentRbmaUrl}}" target="blank"><i class="fa fa-facebook"></i></a></div>
+      </div>
+    </div>
+    <p ng-bind-html="trust(list.fields.body)" class="intro"></p>
+    <ul class="list-items">
+      <li ng-repeat="item in list.fields.individualListItems" class="list-item">
+        <div id="{{item.fields.anchorLinkTag}}" class="list-container">
+          <div class="list-titles"><span class="item-order">{{item.fields.order}}</span>
+            <h3 class="item-title">{{item.fields.title}}</h3>
+          </div>
+          <div class="item-body">
+            <div ng-show="{{item.fields.embedAsImage}}" class="item-image-wrapper"><img ng-src="{{item.fields.image.fields.file.url}}"/></div>
+            <p ng-bind-html="trust(item.fields.body)"></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div ng-show="desktop">
+      <div sticky="sticky" class="sidebar"><a href="#top" du-smooth-scroll="du-smooth-scroll" class="topscroll"><img ng-src="{{list.fields.authorImage.fields.file.url}}"/>
+          <h4 class="radio-picks-sidebar">{{list.fields.parentTitle}}</h4></a>
+        <ul class="sidebar-list"><a ng-repeat="item in list.fields.individualListItems" href="#{{item.fields.anchorLinkTag}}" du-smooth-scroll="du-smooth-scroll" du-scrollspy="du-scrollspy" class="{{item.fields.anchorLinkTag}}">
+            <li data-order="{{item.fields.order}}" class="sidebar-item">
+              <div class="order">{{item.fields.order}}</div>
+              <div class="sidebar-title">{{item.fields.title}}</div>
+            </li></a></ul>
+        <div class="button-group">
+          <div class="button"><a href="https://twitter.com/share?url={{list.fields.parentRbmaUrl}}&amp;via=rbma&amp;text={{list.fields.title}}" target="blank"><i class="fa fa-twitter"></i></a></div>
+          <div class="button"><a href="https://www.facebook.com/sharer/sharer.php?u={{list.fields.parentRbmaUrl}}" target="blank"><i class="fa fa-facebook"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

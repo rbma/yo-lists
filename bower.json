@@ -14,7 +14,8 @@
     "ngprogress": "~1.0.7",
     "contentful": "~0.1.2",
     "angular-scroll": "~0.6.2",
-    "showdown": "~0.3.1"
+    "showdown": "~0.3.1",
+    "ng-contentful": "~0.1.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
