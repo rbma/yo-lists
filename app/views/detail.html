@@ -32,6 +32,9 @@
         </div>
       </li>
     </ul>
+
+
+    <!--SIDEBAR-->
     <div ng-show="desktop">
       <div sticky="sticky" class="sidebar"><a href="#top" du-smooth-scroll="du-smooth-scroll" class="topscroll"><img ng-src="{{list.fields.authorImage.fields.file.url}}"/>
           <h4 class="radio-picks-sidebar">{{list.fields.parentTitle}}</h4></a>
@@ -40,11 +43,14 @@
               <div class="order">{{item.fields.order}}</div>
               <div class="sidebar-title">{{item.fields.title}}</div>
             </li></a></ul>
+        <!--SIDEBAR SOCIAL-->
         <div class="button-group">
           <div class="button"><a href="https://twitter.com/share?url={{list.fields.parentRbmaUrl}}&amp;via=rbma&amp;text={{list.fields.title}}" target="blank"><i class="fa fa-twitter"></i></a></div>
           <div class="button"><a href="https://www.facebook.com/sharer/sharer.php?u={{list.fields.parentRbmaUrl}}" target="blank"><i class="fa fa-facebook"></i></a></div>
-        </div>
-      </div>
-    </div>
+        </div><!--END SOCIAL-->
+      </div><!--END SIDEBAR-->
+    </div><!--END NG-SHOW ON DESKTOP-->
+
+    
   </div>
 </div>
